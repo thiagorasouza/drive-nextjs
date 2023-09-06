@@ -27,6 +27,7 @@
     "node": "18"
   },
   "devDependencies": {
+    "@faker-js/faker": "^8.0.2",
     "@types/jest": "^29.5.4",
     "git-commit-msg-linter": "^5.0.4",
     "husky": "^8.0.3",
