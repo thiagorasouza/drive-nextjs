@@ -22,4 +22,11 @@ describe("FilenamifyAdapter Test Suite", () => {
     const result = sut.sanitize(`my:filename`);
     expect(result).toBe("my_filename");
   });
+
+  it("should return ___ if ::: is provided", () => {
+    const sut = makeSut();
+
+    const result = sut.sanitize(`my:filename`);
+    expect(result).toBe("my_filename");
+  });
 });
