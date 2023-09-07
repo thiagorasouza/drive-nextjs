@@ -1,5 +1,5 @@
 import { UploadFile } from "@/lib/usecases/uploadFile";
-import { FileDataBuilder } from "./mocks/fileDataBuilder";
+import { FileDataBuilder } from "../../mocks/fileDataBuilder";
 import { MissingParam } from "@/lib/core/failures/missingParam";
 
 const makeSut = () => {
@@ -21,7 +21,7 @@ describe("UploadFile Usecase Test Suite", () => {
     ];
 
     for (const field of requiredFields) {
-      const request = FileDataBuilder.file().withNull(field).build();
+      const request = FileDataBuilder.file().null(field).build();
       const result = await sut.execute(request);
       expect(result).toStrictEqual(new MissingParam(field));
     }

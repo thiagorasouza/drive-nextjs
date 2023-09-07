@@ -8,7 +8,7 @@ export interface RequestModel {
   filePath: string;
   fileSize: number;
   fileExt: string;
-  owner: string;
+  fileOwner: string;
 }
 
 export type ResponseModel = FileUploaded | MissingParam;
@@ -32,7 +32,14 @@ export class UploadFile {
       return guardResult;
     }
 
-    const { fileData, fileName, filePath, fileSize, fileExt, owner } = request;
+    const {
+      fileData,
+      fileName,
+      filePath,
+      fileSize,
+      fileExt,
+      fileOwner: owner,
+    } = request;
 
     return new FileUploaded();
   }
