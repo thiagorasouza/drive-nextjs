@@ -14,7 +14,6 @@ export interface FileProps {
 }
 
 export interface FileInput {
-  fileId: string;
   fileData: Buffer;
   fileName: string;
   filePath: string;
