@@ -1,9 +1,6 @@
 import { InvalidParam } from "../core/failures/invalidParam";
 import { Success } from "../core/success";
-
-interface ServerConfig {
-  maxFileSize: number;
-}
+import { ServerConfig } from "./protocols";
 
 export class FileSize {
   private readonly _value: number;

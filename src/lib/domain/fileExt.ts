@@ -1,9 +1,6 @@
 import { InvalidParam } from "../core/failures/invalidParam";
 import { Success } from "../core/success";
-
-interface ServerConfig {
-  allowedExts: string[];
-}
+import { ServerConfig } from "./protocols";
 
 export class FileExt {
   private readonly _value: string;
