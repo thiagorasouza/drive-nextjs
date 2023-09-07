@@ -1,5 +1,6 @@
 import { InvalidParam } from "../core/failures/invalidParam";
 import { Success } from "../core/success";
+import { Validator } from "./protocols";
 
 export class FilePath {
   private readonly _value: string;
