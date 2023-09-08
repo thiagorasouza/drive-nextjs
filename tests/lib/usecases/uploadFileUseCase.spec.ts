@@ -38,7 +38,7 @@ describe("UploadFile Usecase Test Suite", () => {
     ];
 
     for (const field of requiredFields) {
-      const request = FileDataBuilder.file().null(field).build();
+      const request = FileDataBuilder.file().null(field).buildInput();
       const response = await sut.execute(request);
       expect(response).toStrictEqual(new MissingParam(field));
     }
@@ -49,7 +49,7 @@ describe("UploadFile Usecase Test Suite", () => {
     const request = FileDataBuilder.file()
       .ext(mockServerConfig.allowedExts[0])
       .size(mockServerConfig.maxFileSize - 1000)
-      .build();
+      .buildInput();
     const response = await sut.execute(request);
     expect(response).toBeInstanceOf(FileUploaded);
   });

@@ -28,7 +28,7 @@ describe("File Entity Test Suite", () => {
     const fileInput = FileDataBuilder.file()
       .ext(mockServerConfig.allowedExts[0])
       .size(mockServerConfig.maxFileSize - 1000)
-      .build();
+      .buildInput();
 
     const result = sutWrapper(fileInput) as Success<File>;
     console.log("🚀 ~ result:", result);

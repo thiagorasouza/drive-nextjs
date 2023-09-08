@@ -54,7 +54,7 @@ export class FileDataBuilder {
     return this;
   }
 
-  public build(): FileInput {
+  public buildInput(): FileInput {
     return this.file;
   }
 
