@@ -1,6 +1,15 @@
 import crypto from "node:crypto";
 import { faker } from "@faker-js/faker";
-import { FileInput } from "@/lib/domain";
+import {
+  FileExt,
+  FileId,
+  FileInput,
+  FileName,
+  FileOwner,
+  FilePath,
+  FileProps,
+  FileSize,
+} from "@/lib/domain";
 
 export class FileDataBuilder {
   private DEFAULT_FILESIZE = 1024 * 1024; // 1 MB
@@ -9,6 +18,11 @@ export class FileDataBuilder {
 
   private constructor() {
     this.file = {};
+  }
+
+  public id(id?: string) {
+    this.file["fileId"] = id ?? faker.string.uuid();
+    return this;
   }
 
   public data(data?: Buffer) {
@@ -58,7 +72,19 @@ export class FileDataBuilder {
     return this.file;
   }
 
+  public buildProps(): FileProps {
+    return {
+      fileId: FileId.from(this.file.fileId).value,
+      fileSize: FileSize.from(this.file.fileSize).value,
+      fileData: this.file.fileData,
+      fileName: FileName.from(this.file.fileName).value,
+      filePath: FilePath.from(this.file.filePath).value,
+      fileExt: FileExt.from(this.file.fileExt).value,
+      fileOwner: FileOwner.from(this.file.fileOwner).value,
+    };
+  }
+
   public static file(): FileDataBuilder {
-    return new FileDataBuilder().data().size().name().path().ext().owner();
+    return new FileDataBuilder().id().data().size().name().path().ext().owner();
   }
 }
