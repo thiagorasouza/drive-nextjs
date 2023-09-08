@@ -31,7 +31,6 @@ describe("File Entity Test Suite", () => {
       .buildInput();
 
     const result = sutWrapper(fileInput) as Success<File>;
-    console.log("🚀 ~ result:", result);
 
     expect(result.ok).toBe(true);
     expect(result.value).toBeInstanceOf(File);
