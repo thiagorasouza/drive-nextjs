@@ -3,13 +3,8 @@ import { FileDataBuilder } from "../../mocks/fileDataBuilder";
 import { mockIdentifier } from "../../mocks/identifier.mock";
 import { mockSanitizer } from "../../mocks/sanitizer.mock";
 import { mockValidator } from "../../mocks/validator.mock";
-import { ServerConfig } from "@/lib/domain/protocols";
 import { Success } from "@/lib/core/success";
-
-const mockServerConfig: ServerConfig = {
-  maxFileSize: 2 * 1024 * 1024, // 2 MB
-  allowedExts: ["test1", "test2"],
-};
+import { mockServerConfig } from "../../mocks/serverConfig.mock";
 
 const makeSutWrapper = () => {
   const identifierStub = mockIdentifier();
