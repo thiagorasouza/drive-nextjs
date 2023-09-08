@@ -23,4 +23,8 @@ export class FileExt {
 
     return new Success<FileExt>(new FileExt(fileExt));
   }
+
+  public static from(ext: string): Success<FileExt> {
+    return new Success<FileExt>(new FileExt(ext));
+  }
 }

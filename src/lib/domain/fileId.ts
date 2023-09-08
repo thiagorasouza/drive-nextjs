@@ -16,4 +16,8 @@ export class FileId {
     const randomId = identifier.generateRandomId();
     return new Success<FileId>(new FileId(randomId));
   }
+
+  public static from(id: string): Success<FileId> {
+    return new Success<FileId>(new FileId(id));
+  }
 }

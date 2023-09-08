@@ -23,4 +23,8 @@ export class FileSize {
 
     return new Success<FileSize>(new FileSize(fileSize));
   }
+
+  public static from(size: number): Success<FileSize> {
+    return new Success<FileSize>(new FileSize(size));
+  }
 }

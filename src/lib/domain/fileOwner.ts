@@ -23,4 +23,8 @@ export class FileOwner {
 
     return new Success<FileOwner>(new FileOwner(userId));
   }
+
+  public static from(owner: string): Success<FileOwner> {
+    return new Success<FileOwner>(new FileOwner(owner));
+  }
 }

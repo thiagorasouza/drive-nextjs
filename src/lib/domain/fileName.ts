@@ -30,4 +30,8 @@ export class FileName {
 
     return new Success<FileName>(new FileName(sanitizedFileName));
   }
+
+  public static from(name: string): Success<FileName> {
+    return new Success<FileName>(new FileName(name));
+  }
 }

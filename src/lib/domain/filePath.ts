@@ -23,4 +23,8 @@ export class FilePath {
 
     return new Success<FilePath>(new FilePath(filePath));
   }
+
+  public static from(path: string): Success<FilePath> {
+    return new Success<FilePath>(new FilePath(path));
+  }
 }
