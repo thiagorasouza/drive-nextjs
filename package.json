@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 4000",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -11,7 +11,7 @@
     "test:watch": "npm run test -- --watch"
   },
   "dependencies": {
-    "@supabase/supabase-js": "^2.33.1",
+    "@supabase/supabase-js": "^2.33.2",
     "@types/node": "20.5.7",
     "@types/react": "18.2.21",
     "@types/react-dom": "18.2.7",
