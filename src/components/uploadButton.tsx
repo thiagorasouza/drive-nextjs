@@ -1,6 +1,6 @@
 "use client";
 
-import { uploadService } from "@/services/uploadService";
+import { uploadService } from "@/services/uploadFileService";
 import { ChangeEvent, useEffect, useRef, useState } from "react";
 import { MdAdd } from "react-icons/md";
 
