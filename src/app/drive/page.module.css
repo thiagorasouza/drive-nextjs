@@ -1,3 +1,0 @@
-.fileGrid {
-  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-}
